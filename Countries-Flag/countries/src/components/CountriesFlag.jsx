@@ -23,6 +23,7 @@ export const CountriesFlag = () => {
   return (
     <>
       <div className={styles.container}>
+        <h1>Countries and their Flags</h1>
         {data.map((item) => {
           return (
             <div key={item.cca3} className={styles.card}>
