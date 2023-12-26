@@ -62,7 +62,11 @@ export default function Form() {
             )}
           </div> */}
           <div>
-            <button className={styles.submitBtn} onClick={handleSubmit}>
+            <button
+              type="submit"
+              className={styles.submitBtn}
+              onClick={handleSubmit}
+            >
               Submit
             </button>
           </div>
