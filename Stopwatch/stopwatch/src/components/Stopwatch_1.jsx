@@ -7,10 +7,17 @@ function Stopwatch_1() {
   const timerId = useRef(null);
   // console.log(isActivated, "in stopwatch_1 initially");
 
-  const format = (time) => {
-    const mins = Math.floor(time / 60);
-    time = time % 60;
-    return `${mins}:${time < 10 ? "0" : ""}${time}`;
+  const format = (milisecs) => {
+    const hr = Math.floor(milisecs / 3600000);
+    const mins = Math.floor(milisecs / 60000);
+    const secs = Math.floor(milisecs / 1000);
+    milisecs = milisecs % 1000;
+    return `${hr}:${mins < 10 ? "0" : ""}${mins}:${
+      secs < 10 ? "0" : ""
+    }${secs}:${milisecs < 10 ? "00" : ""}${milisecs} `;
+    // return `${mins}:${milisecs < 10 ? "0" : ""}${milisecs}`;
+    //min:sec
+    // hr:min:sec:ms --> 02:59:59:009
   };
 
   const toggleHandler = () => {
@@ -27,33 +34,20 @@ function Stopwatch_1() {
       if (isActivated) {
         setTimer((preTimer) => preTimer + 1);
       }
-    }, 1000);
+    }, 1); // counting every miliseconds
 
     return () => {
       clearInterval(timerId.current);
     };
-  }, [isActivated, timer]);
-
-  // useEffect(() => {
-  //   let intervalId;
-  //   if (isActivated) {
-  //     intervalId = setInterval(() => {
-  //       setTimer((prevTimer) => prevTimer + 1);
-  //     }, 1000);
-  //   } else clearInterval(intervalId);
-
-  //   return () => {
-  //     clearInterval(intervalId);
-  //   };
-  // }, [isActivated]);
+  }, [isActivated]);
 
   return (
     <>
       <div className={styles.container}>
         <h1>Stopwatch_1</h1>
         {/* <p>Time: 0:00</p> */}
-        <p>Time: {format(timer)}</p>
 
+        <p> Time: {format(timer)}</p>
         <div>
           <button className={styles.btn} onClick={toggleHandler}>
             {isActivated ? "Stop" : "Start"}

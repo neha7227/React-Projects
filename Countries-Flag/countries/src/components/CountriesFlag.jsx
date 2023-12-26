@@ -22,8 +22,10 @@ export const CountriesFlag = () => {
   }, []);
   return (
     <>
+      <h1>Countries and their Flags</h1>
+
       <div className={styles.container}>
-        <h1>Countries and their Flags</h1>
+        {/* <h1>Countries and their Flags</h1> */}
         {data.map((item) => {
           return (
             <div key={item.cca3} className={styles.card}>
