@@ -50,16 +50,16 @@ export default function Form() {
             <br />
           </div>
           <div>
-            {firstName && lastName ? (
-              <input
-                type="submit"
-                value="Submit"
-                onClick={handleSubmit}
-                className={styles.submitBtn}
-              />
-            ) : (
+            {/* {firstName && lastName ? ( */}
+            <input
+              type="submit"
+              value="Submit"
+              onClick={handleSubmit}
+              className={styles.submitBtn}
+            />
+            {/* ) : (
               <button className={styles.submitBtn}>Submit</button>
-            )}
+            )} */}
           </div>
         </form>
         <p>Full Name: {fullName}</p>
