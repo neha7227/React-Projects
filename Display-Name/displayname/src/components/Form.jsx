@@ -71,7 +71,8 @@ export default function Form() {
             </button>
           </div>
         </form>
-        <p>Full Name: {fullName}</p>
+        {fullName ? <p>Full Name: {fullName}</p> : ""}
+        {/* <p>Full Name: {fullName}</p> */}
       </div>
     </>
   );
