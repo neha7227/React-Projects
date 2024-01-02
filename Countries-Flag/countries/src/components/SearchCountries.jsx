@@ -8,7 +8,7 @@ function SearchCountries({ value, ChangedValue }) {
         placeholder="Search for countries..."
         value={value}
         onChange={(e) => {
-          console.log(e.target.value);
+          // console.log(e.target.value);
           return ChangedValue(e.target.value);
         }}
       ></input>

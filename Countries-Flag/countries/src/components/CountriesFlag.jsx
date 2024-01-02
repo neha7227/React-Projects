@@ -9,11 +9,11 @@ export const CountriesFlag = () => {
     try {
       const res = await fetch("https://restcountries.com/v3.1/all");
       const countries = await res.json();
-      console.log(
-        countries[3].flags.svg,
-        countries[3].name.common,
-        "countries"
-      );
+      // console.log(
+      //   countries[3].flags.svg,
+      //   countries[3].name.common,
+      //   "countries"
+      // );
       setData(countries);
     } catch (error) {
       console.error("Error fetching data: ", error);
@@ -47,7 +47,11 @@ export const CountriesFlag = () => {
       <div className={styles.container}>
         {filteredCountries.map((item) => {
           return (
-            <div key={item.cca3} className={styles.card}>
+            <div
+              key={item.cca3}
+              className={styles.card}
+              style={{ flexDirection: "column" }}
+            >
               <img
                 className={styles.flag}
                 src={item.flags.svg}
