@@ -44,10 +44,7 @@ export const CountriesFlag = () => {
     <>
       <h1>Countries and their Flags</h1>
       <SearchCountries value={title} ChangedValue={setTitle} />
-      {/* {data.includes({ title }) ?  */}
-
       <div className={styles.container}>
-        {/* <h1>Countries and their Flags</h1> */}
         {filteredCountries.map((item) => {
           return (
             <div key={item.cca3} className={styles.card}>
@@ -61,8 +58,6 @@ export const CountriesFlag = () => {
           );
         })}
       </div>
-
-      {/* )} */}
     </>
   );
 };
