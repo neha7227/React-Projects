@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { CountriesFlag } from './components/CountriesFlag';
+import SearchCountries from './components/SearchCountries';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header> */}
+      {/* <SearchCountries/> */}
       <CountriesFlag/>
     </div>
   );
