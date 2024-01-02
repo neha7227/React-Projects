@@ -56,7 +56,7 @@ export const CountriesFlag = () => {
                 src={item.flags.svg}
                 alt={`Flag of ${item.name.common}`}
               />
-              <h3 className={styles.text}>{item.name.common}</h3>
+              <h2 className={styles.text}>{item.name.common}</h2>
             </div>
           );
         })}
